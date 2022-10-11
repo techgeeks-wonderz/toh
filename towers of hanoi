@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+    
+    static void hanoi(int disc,char src,char dest,char temp) {
+        if(disc == 0){
+            return ;
+        }
+        hanoi(disc-1,src,temp,dest);
+        System.out.println("Move "+disc+" from "+src+" to "+dest);
+        hanoi(disc-1,temp,src,dest);
+
+        
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int t = input.nextInt();
+        for(int l = 0 ; l < t;l++){
+            int disc = input.nextInt();
+            System.out.println((1<<disc)-1);
+            hanoi(disc,'A', 'B','C');
+            }
+        }
+    }
