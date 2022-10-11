@@ -22,6 +22,7 @@ public class Solution {
         for(int l = 0 ; l < t;l++){
             int disc = input.nextInt();
             System.out.println((1<<disc)-1);
+            //order of the source dest and temporary disc
             hanoi(disc,'A', 'B','C');
             }
         }
